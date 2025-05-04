@@ -95,11 +95,11 @@ local RENDER_VARIANTS = {
 -- stylua: ignore
 local colors = {
    text_default          = { bg = "#19543E", fg = '#1C1B19' },
-   text_hover            = { bg = '#5D87A3', fg = '#1C1B19' },
+   text_hover            = { bg = '#98d9aa', fg = '#1C1B19' },
    text_active           = { bg = "#98d9aa", fg = '#11111B' },
 
    unseen_output_default = { bg = "#19543E", fg = '#E3ACDE' },
-   unseen_output_hover   = { bg = '#5D87A3', fg = '#E3ACDE' },
+   unseen_output_hover   = { bg = '#98d9aa', fg = '#E3ACDE' },
    unseen_output_active  = { bg = '#74c7ec', fg = "#8FC9A3" },
 
    scircle_default       = { bg = 'rgba(0, 0, 0, 0.4)', fg = "#19543E" },

@@ -1,0 +1,55 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 35,
+  "spacing": 5,
+  "margin-top": 10,
+  "margin-botton": 5,
+  "modules-left": ["wlr/taskbar"],
+  "modules-right": ["network", "custom/pipewire", "clock", "tray", "custom/power"],
+  
+  "wlr/taskbar": {
+  	"format": "{icon}",
+	"icon-size": 20,
+	"icon-theme": "Star",
+        "tooltip-format": "{title}",
+        "on-click": "minimize",
+        "on-click-middle": "close",
+        "on-click-right": "activate"
+    },
+
+  "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+  "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": " ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
+    },
+
+    "custom/pipewire": {
+    	"exec": "pw-volume status",
+    	"return-type": "json",
+    	"interval": "once",
+    	"signal": 8,
+    	"format": "{icon} {percentage}",
+    	"format-icons": {
+        	"mute": "",
+        	"default": ["󰕿", "󰖀", "󰕾"]
+	},
+	"on-scroll-up": "pw-volume change +1%",
+	"on-scroll-down": "pw-volume change -1%",
+	"on-click": "pw-volume mute toggle",
+    },
+
+    "custom/power":{
+    "format": "  ",
+    "on-click": "nwg-bar",
+    "on-click-right": "killall nwg-bar"
+    },
+}
