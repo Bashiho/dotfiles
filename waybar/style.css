@@ -1,0 +1,172 @@
+* {
+    border: none;
+    border-radius: 0px;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+#workspaces button {
+    background: #1f1f1f;
+    color: #ffffff;
+    border-radius: 20px;
+
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: lightblue;
+    color: black;
+    border-bottom: 3px solid #ffffff;
+
+}
+
+#workspaces button.focused {
+    background: #1f1f1f;
+}
+
+#workspaces button.focused:hover {
+    background: lightblue;
+    color: black;
+    border-bottom: 3px solid #ffffff;
+
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #98d9aa;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#network,
+#pipewire,
+#custom-power,
+#custom-layout,
+#taskbar,
+#tray,
+#mode,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#window,
+#workspaces {
+    margin: 0px 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+#clock {
+    background-color: #19453E;
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network {
+    background-color: #19453E;
+    color: #ffffff;
+    border-radius: 20px 0px 0px 20px;
+}
+
+#network.disconnected {
+    background-color: #171717;
+    color: red;
+}
+
+#custom-pipewire {
+    background-color: #19453E;
+    color: #ffffff;
+}
+
+#custom-pipewire.muted {
+    background-color: #171717;
+    color: red;
+}
+
+#custom-power{
+    background-color: #19453E;
+    font-size: 18px;
+    border-radius: 0px 20px 20px 0px;
+    margin-right: 5px;
+
+}
+
+
+#taskbar{
+    background-color: #19453E;
+    border-radius: 20px 20px 20px 0px;
+    margin-left: 5px;
+}
+
+#tray {
+    background-color: #19453E;
+    color: #ffffff;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: #19453E;
+    color: #ffffff;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #171717;
+    color: #ffffff;
+}
+
+#language {
+    background-color: #19453E;
+    color: #ffffff;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #19453E;
+    color: #000000;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0px 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
