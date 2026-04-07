@@ -1,1 +1,1 @@
-logo.txt goes into > .config/fastfetch/logo.txt
+Use stow to create links to .config folder
