@@ -1,0 +1,40 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 35,
+  "spacing": 0,
+  "margin-top": 10,
+  "margin-botton": 5,
+  "modules-left": ["wlr/taskbar"],
+  "modules-right": ["network", "clock", "tray", "battery"],
+  
+  "wlr/taskbar": {
+  	"format": "{icon}",
+	"icon-size": 20,
+	// "icon-theme": "Star",
+        "tooltip-format": "{title}",
+        "on-click": "minimize",
+        "on-click-middle": "close",
+        "on-click-right": "activate"
+    },
+
+  "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+
+  "battery": {
+  "format": "<span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
+  "format-icons": ["", "", "", "", ""],
+  "format-time": "{H}h {M}m",
+  "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+  "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+  "interval": 30,
+  "states": {
+	  "warning": 25,
+	  "critical": 10
+  },
+  "tooltip": false, 
+  "on-click": "2"
+    },
+}

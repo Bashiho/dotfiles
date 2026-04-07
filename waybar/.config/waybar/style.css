@@ -62,6 +62,7 @@ window#waybar.hidden {
 #taskbar,
 #tray,
 #mode,
+#battery,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -127,11 +128,16 @@ label:focus {
 
 }
 
-
 #taskbar{
     background-color: #19453E;
     border-radius: 20px 20px 20px 0px;
     margin-left: 5px;
+}
+
+#battery{
+	background-color: #19453E;
+	color: #ffffff;
+	border-radius: 0px 20px 20px 0px;
 }
 
 #tray {
