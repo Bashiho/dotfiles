@@ -5,8 +5,6 @@ format = """
 [󰫢](fg:teal bg:blue)\
 $username\
 $directory\
-$git_branch\
-$git_status\
 $time\
 [ ](fg:blue)\
 $cmd_duration\
@@ -31,14 +29,6 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = "󰎇 "
 "Pictures" = " "
-
-[git_branch]
-symbol = ""
-style = "bg:green"
-format = '[[ $symbol $branch ](fg:teal bg:blue)]'
-
-[git_status]
-format = '[[($all_status$ahead_behind )](fg:teal bg:blue)]'
 
 [time]
 disabled = false
