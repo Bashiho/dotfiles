@@ -18,10 +18,36 @@
         "on-click-right": "activate"
     },
 
+  "clock": {
+	"format": "{:%H:%M}",
+	"format-alt": "{:%A, %B %d, %Y (%R)}",
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
+		"mode"          : "year",
+		"mode-mon-col"  : 3,
+		"on-scroll"     : 1,
+		"on-click-right": "mode",
+		"format": {
+			"months":     "<span color='#ffffff'><b>{}</b></span>",
+			"days":       "<span color='#ffffff'><b>{}</b></span>",
+			"weeks":      "<span color='#ffffff'><b>W{}</b></span>",
+			"weekdays":   "<span color='#ffffff'><b>{}</b></span>",
+			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+		}
+	},
+	"actions": {
+		"on-click-right": "mode",
+		"on-click-forward": "tz_up",
+		"on-click-backward": "tz_down",
+		"on-scroll-up": "shift_up",
+		"on-scroll-down": "shift_down"
+	}
+  },
+
   "tray": {
         // "icon-size": 21,
         "spacing": 10
-    },
+  },
 
   "battery": {
   "format": "<span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
