@@ -1,66 +1,109 @@
 {
   "layer": "bottom",
   "position": "bottom",
-  "height": 35,
+  "height": 25,
   "spacing": 0,
-  "margin-top": 10,
-  "margin-botton": 5,
-  "modules-left": ["wlr/taskbar"],
-  "modules-right": ["network", "clock", "tray", "battery"],
+  // "margin-top": 10,
+  // "margin-botton": 5,
+  "modules-left": [
+    "wlr/taskbar",
+    "hyprland/workspaces"
+    // "hyprland/window"
+  ],
+
+  "modules-center": [
+
+  ],
+
+  "modules-right": [
+    "network", 
+    "clock", 
+    "tray", 
+    "battery",
+    "pulseaudio",
+    "custom/power"
+  ],
   
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate"
+  },
+
+  "hyprland/window": {
+    "format": "// {title}",
+    "max-length": 40
+  },
+
   "wlr/taskbar": {
   	"format": "{icon}",
-	"icon-size": 20,
-	// "icon-theme": "Star",
-        "tooltip-format": "{title}",
-        "on-click": "minimize",
-        "on-click-middle": "close",
-        "on-click-right": "activate"
-    },
+	  "icon-size": 20,
+	  // "icon-theme": "Star",
+    "tooltip-format": "{title}",
+    "on-click": "minimize",
+    "on-click-middle": "close",
+    "on-click-right": "activate"
+  },
+  
+  "network": {
+    "format-wifi": "NET {essid}",
+    "format-ethernet": "ETH {ifname}",
+    "format-disconnected": "NET --",
+    "tooltip-format": "{ipaddr}"
+  },
 
   "clock": {
-	"format": "{:%H:%M}",
-	"format-alt": "{:%A, %B %d, %Y (%R)}",
-	"tooltip-format": "<tt><small>{calendar}</small></tt>",
-	"calendar": {
-		"mode"          : "year",
-		"mode-mon-col"  : 3,
-		"on-scroll"     : 1,
-		"on-click-right": "mode",
-		"format": {
-			"months":     "<span color='#ffffff'><b>{}</b></span>",
-			"days":       "<span color='#ffffff'><b>{}</b></span>",
-			"weeks":      "<span color='#ffffff'><b>W{}</b></span>",
-			"weekdays":   "<span color='#ffffff'><b>{}</b></span>",
-			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-		}
-	},
-	"actions": {
-		"on-click-right": "mode",
-		"on-click-forward": "tz_up",
-		"on-click-backward": "tz_down",
-		"on-scroll-up": "shift_up",
-		"on-scroll-down": "shift_down"
-	}
+	  "format": "{:%H:%M}",
+	  "format-alt": "{:%A, %B %d, %Y (%R)}",
+	  "tooltip-format": "<tt><small>{calendar}</small></tt>",
+	  "calendar": {
+	  	"mode"          : "year",
+	  	"mode-mon-col"  : 3,
+	  	"on-scroll"     : 1,
+	  	"on-click-right": "mode",
+	  	"format": {
+	  		"months":     "<span color='#FFDD44'><b>{}</b></span>",
+	  		"days":       "<span color='#33AAEE'><b>{}</b></span>",
+	  		"weekdays":   "<span color='#EE6666'><b>W{}</b></span>",
+	  		"today":      "<span color='#bbdd22'><b><u>{}</u></b></span>"
+	  	}
+	  },
+	  "actions": {
+	  	"on-click-right": "mode",
+	  	"on-click-forward": "tz_up",
+	  	"on-click-backward": "tz_down",
+	  	"on-scroll-up": "shift_up",
+	  	"on-scroll-down": "shift_down"
+	  }
   },
 
   "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+    // "icon-size": 21,
+    "spacing": 10
   },
 
   "battery": {
-  "format": "<span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
-  "format-icons": ["", "", "", "", ""],
-  "format-time": "{H}h {M}m",
-  "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
-  "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
-  "interval": 30,
-  "states": {
-	  "warning": 25,
-	  "critical": 10
-  },
-  "tooltip": false, 
-  "on-click": "2"
+    "format": "<span font='Font Awesome 5 Free 11'>{icon} </span>  {capacity}% - {time}",
+    "format-icons": ["", "", "", "", ""],
+    "format-time": "{H}h {M}m",
+    "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+    "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+    "interval": 30,
+    "states": {
+	    "warning": 25,
+	    "critical": 10
     },
+    "tooltip": false, 
+    "on-click": "2"
+  },
+
+  "pulseaudio": {
+    "format": "Vol {volume}%",
+    "format-muted": "VOL --",
+    "on-click": "pavucontrol"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "hyprctl dispatch exit"
+  }
 }
