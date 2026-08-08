@@ -6,8 +6,8 @@
   // "margin-top": 10,
   // "margin-botton": 5,
   "modules-left": [
-    "wlr/taskbar",
-    "hyprland/workspaces"
+	  "wlr/taskbar",
+	  "hyprland/workspaces"
     // "hyprland/window"
   ],
 
